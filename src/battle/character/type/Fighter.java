@@ -35,7 +35,8 @@ public abstract class Fighter implements Combatant, Damageable {
 	 */
 	public int attack(Damageable opponent) {
 		//TODO: PART 1
-		return -1;
+		damage = randomInclusive(25, 51);
+		return opponent.incrementHealth(-damage);
 	}
 	
 	/**
@@ -94,6 +95,9 @@ public abstract class Fighter implements Combatant, Damageable {
 	@Override
 	public boolean isAlive() {
 		//TODO: PART 1
+		if (health > 0) {
+			return true;
+		}
 		return false;
 	}
 	
